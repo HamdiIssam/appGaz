@@ -8,21 +8,9 @@ const {
   } = require("../Service/produit"); 
 const { StatusCodes } = require("http-status-codes");
 // const produit = require("../models/produitModel");
-const multer = require("multer");
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-
-    cb(null, "C:/Users/Issam Hamd/Desktop/app/frontend/src/assets");
-  },
-
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
-  },
-});
 //  create Produit
 const createProduitController = async (req, res) => {
-  console.log("eeeeeeeeeee",req.file);
   if (!req.file) {
     const error = new Error("No image provided");
 

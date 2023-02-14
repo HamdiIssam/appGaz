@@ -5,7 +5,6 @@ const db = require("../models");
 // create produit
 
 const createProduitService = (data) => {
-  console.log(data);
   return db.produit.create(data);
 };
 
