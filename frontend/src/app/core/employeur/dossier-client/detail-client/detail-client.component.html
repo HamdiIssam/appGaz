@@ -1,0 +1,56 @@
+<ul class="list-group list-group-flush">
+    <li class="list-group-item"></li>
+    <li class="list-group-item">nom :{{client. nom}}</li>
+    <li class="list-group-item">telephone: {{client.telephone}}</li>
+  </ul>
+ <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ref</th>
+        <th scope="col">date_achat</th>
+        <th scope="col">date_livraison</th>
+        <th scope="col">adresse</th>
+        <th scope="col">validation</th>
+        <th scope="col">type_payement</th>
+        <th scope="col">total</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let commande of commandes let index=index">
+        <td> {{index+1}}</td>
+        <td> {{commande.date_achat|date:'shortDate'}}</td>
+        <td> {{commande.date_livraison|date:'shortDate'}}</td>
+        <td> {{commande.adresse}}</td>
+        <td> {{commande.validation}}</td>
+        <td> {{commande.type_payement}}</td>
+        <td> {{commande.total}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Ref</th>
+          <th scope="col">Nom Produit </th>
+          <th scope="col">prix</th>
+          <th scope="col">quantite</th>
+     
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ligne of lignecmd let index=index">
+          <td> {{index+1}}</td>
+          <td> {{ligne.nom_produit}}</td>
+          <td> {{ligne.prix}}</td>
+          <td> {{ligne.quantite}}</td>
+          
+        
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

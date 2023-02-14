@@ -1,0 +1,23 @@
+<div class="login-box">
+    <h2>Login Societe</h2>
+    <form>
+      <div class="form-group">
+        <input type="email" class="form-control form-control-user" name="sd" [(ngModel)]="email"
+          id="exampleInputtelephone" aria-describedby="emailHelp" placeholder="email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control form-control-user" name="sd" [(ngModel)]="password"
+          id="exampleInputPassword" placeholder="Mot de passe">
+      </div>
+      <a class="btn btn-primary btn-user btn-block" (click)="loginSocieteController(email,password)" >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </a>
+    </form>
+    <div class="text-center">
+      <a class="small" routerLink="/societe/addSociete">Créer un Compte!</a>
+    </div>
+  </div>

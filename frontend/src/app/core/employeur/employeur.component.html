@@ -1,0 +1,37 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link"  routerLink='/employeur/Accuiel/'>Accueil </a>
+        </li>
+        <li class="nav-item active">
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link"  routerLink='/employeur/listCommande/'>Liste Commandes </a>
+        </li>
+          <a class="nav-link"  routerLink='/employeur/listLivreur/'>Liste Livreur </a>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/employeur/listProduit/'>Liste Produit</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/employeur/listClient/'>Liste Client</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/societe/updateSociete/',(societeId)]">Update Compte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" (click)="logoutSociete()">Déconnexion</a>
+        </li>
+      </ul>
+    </div>
+    
+  </nav>
+
+  
+
+  <router-outlet></router-outlet>

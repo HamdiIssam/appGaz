@@ -1,0 +1,57 @@
+<!-- <p>updatepatient works!</p>
+
+
+<div >
+    <label  >nom</label>
+    <input type="text"  [(ngModel)]="livreurs.nom"  >
+ 
+  </div>
+<div >
+    <label  >telephone</label>
+    <input type="text"  [(ngModel)]="livreurs.telephone"  >
+ 
+  </div>
+<div >
+    <label  >password</label>
+    <input type="text"  [(ngModel)]="livreurs.password"  >
+ 
+  </div>
+
+ 
+  <button class="btn btn-warning" routerLink="/employeur/listLivreur">Préc</button>
+  <button type="button" class="btn btn-primary" (click)="updateLivreurController()">Submit</button> -->
+
+
+
+  <div class="row">
+    <div class="col">
+      <div class="container">
+        <div class="container">
+          <div class="card" style="width: 30%  ; height: 10%; margin-left: 30%; ">
+            <h5 class="card-title" style="margin-left: 2%; text-align: center;">Update Livreur :</h5>
+            <div class="card-body" style="width: 90%;margin-left: 5%; margin-top: 2%;">
+              <div class="row">
+                <div>
+                  <label>nom et prenom de livreur :</label>
+                  <br>
+                  <input type="text"  [(ngModel)]="livreurs.nom"  >
+                </div>
+                <div>
+                  <label>telephone :</label>
+                  <br>
+                  <input type="text"  [(ngModel)]="livreurs.telephone"  >
+  
+                </div>
+                <div>
+                  <label>password :</label>
+                  <input type="text"  [(ngModel)]="livreurs.password"  >
+                </div>
+              </div>
+              <button class="btn btn-warning" routerLink="/employeur/listLivreur">Préc</button>
+              <button type="button" class="btn btn-primary" (click)="updateLivreurController()">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

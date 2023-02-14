@@ -1,0 +1,174 @@
+<app-navbar></app-navbar>
+<table>
+    <tr>
+      <td>nom prof:</td>
+     <td>{{prof.fullname}}</td>
+    </tr>
+    <tr>
+  
+  </tr>
+    </table>
+    <form [formGroup]="formulaire"   >
+  
+  <select   formControlName="_id">
+    <option value="" disabled>choisir classe</option>
+  
+    <option *ngFor="let c of classes" value="{{c._id}}">{{c.name}}</option>
+  </select>
+  <button class="btn btn-primary" (click)="getEleveClasse()">afficher</button>
+  </form>
+  
+    <table class="table">
+      <thead>
+  
+        </thead>
+     <tbody >
+  
+          <tr>
+  
+            <caption>liste_des_eleves</caption>
+  
+  
+  
+          </tr>
+  
+          <tr *ngFor="let n of eleves; index as valIndex;" >
+            <td>{{n.fullname}}</td>
+            <button  (click)="getIdEleve(n._id)" (click)="openDelete(deleteModal,n._id)">afficher</button>
+  
+            <a (click)="updata(penalite) "><i class="bi bi-pencil-square" style="color: blue; font-size: 25px;margin-right: 20px;"></i></a>
+          </tr>
+  
+          </tbody>
+  
+  
+  
+  
+      </table>
+  
+      <button type="button" class="btn btn-primary"  (click)="openAjoutModel()">
+        ajouter un penalite
+        </button>
+        <div class="modal fade" tabindex="-1" id="Ajoutmodal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modalCenter">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Ajout penalite</h5>
+              </div>
+              <div class="modal-body">
+  
+                  <div class="form-wrap">
+                      <div class="tabs">
+                          <h3 class="signup-tab"><a class="active" ></a></h3>
+  
+                      </div>
+  
+                      <div class="tabs-content" >
+                          <div id="signup-tab-content" class="active">
+                            <form [formGroup]="formulaire" (ngSubmit) = "postPenalite()">
+                              <input type="text" class="form-control"  autocomplete="off" placeholder="penaliteType" formControlName="penaliteType" >
+                              <input type="text" class="form-control" id="course" autocomplete="off" placeholder="date" formControlName="date">
+  
+  
+  
+                                  <select class="form-select" aria-label="Default select example" formControlName="eleve">
+  
+                                    <option *ngFor="let e of eleves" value="{{e._id}}">{{e.fullname}}</option>
+  
+                                    </select>
+                              <button type="submit" class="btn btn-success mt-2  text-right" value="">ajouter</button>
+                              <button type="reset" class="btn btn-secondary mt-2" (click)="closeModle()">Close</button>
+                          </form>
+                              <div class="help-text">
+  
+                              </div>
+                          </div>
+  
+  
+                      </div>
+                  </div>
+  
+  
+  
+              </div>
+  
+            </div>
+          </div>
+        </div>
+  
+      <ng-template class="modal fade" let-modal data-toggle="modal" role="deleteModal" #deleteModal >
+  
+        <div class="modal-content">
+          <div class="modal-header bg-danger">
+            <h5 class="modal-title text-white">Penalite</h5>
+          </div>
+          <div class="modal-body">
+  
+             <h5>{{penalite.penaliteType}}
+              {{penalite.date}}</h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modal.dismiss()" >Close</button>
+  
+          </div>
+      </div>
+      </ng-template>
+  
+      <!-- <form  [formGroup]="formulaire" (ngSubmit) = "conditionPenalite()">
+        <div class="mb-3">
+            <label for="disabledTextInput" class="form-label">penaliteType</label>
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Put your penalite"formControlName="penaliteType" >
+            <label for="disabledTextInput" class="form-label">date</label>
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Put your date"formControlName="date" >
+            <button type="submit" class="button" >modifier</button>
+          </div>
+        </form> -->
+        <div class="modal fade" tabindex="-1" id="monModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modalCenter">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Modifier le penalite</h5>
+                <button type="button" class="close" data-dismiss="modal">
+  
+                </button>
+              </div>
+              <div class="modal-body">
+  
+  
+                  <div class="form-wrap">
+                      <div class="tabs">
+                          <h3 class="signup-tab"><a class="active"></a></h3>
+  
+                      </div><!--.tabs-->
+  
+                      <div class="tabs-content" >
+                          <div id="signup-tab-content" class="active">
+                            <form [formGroup]="formulaire" (ngSubmit) = " updatePenalite()">
+                              <input type="text" class="form-control"  autocomplete="off" placeholder="penaliteType" formControlName="penaliteType" >
+                              <input type="text" class="form-control" id="course" autocomplete="off" placeholder="date" formControlName="date">
+  
+  
+  
+  
+                              <button type="submit" class="btn btn-success mt-2  text-right" value="">modifier</button>
+                              <button type="reset" class="btn btn-secondary mt-2" (click)="closeModle()">Close</button>
+                          </form><!--.login-form-->
+                              <div class="help-text">
+  
+                              </div><!--.help-text-->
+                          </div><!--.signup-tab-content-->
+  
+  
+                      </div><!--.tabs-content-->
+                  </div><!--.form-wrap-->
+  
+  
+  
+              </div>
+              <div class="modal-footer">
+  
+  
+              </div>
+            </div>
+          </div>
+        </div>

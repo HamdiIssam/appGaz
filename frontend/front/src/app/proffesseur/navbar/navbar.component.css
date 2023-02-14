@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+body {
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+}
+.nav{
+  width: 800px;
+  height: 100px;
+  line-height: 100px;
+  background: rgb(18, 161, 238);
+  margin: 0 auto;
+}
+.nav a {
+  display: block;
+  width: 200px;
+  height: 100px;
+  float: left;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+}
+.nav a:nth-child(1):hover {background: #1d50c9;}
+.nav a:nth-child(2):hover {background: #0a27cb;}
+.nav a:nth-child(3):hover {background: #0f0ab0;}
+.nav a:nth-child(4):hover {background: #0e20e3;}
+.nav a:nth-child(5):hover {background: #074ee9;}
+.nav a:nth-child(6):hover {background: #097487;}
+.nav a:nth-child(7):hover {background: #E8D392;}
+.nav a:nth-child(8):hover {background: #E30E1F;}
+.nav a:hover > .shad {
+    opacity: 0.8;
+}
+.shad {
+  width: 200px;
+  height: 300px;
+  opacity: 0;
+  margin-top: -260px;
+  box-shadow: 10px 0px rgba(18, 17, 23, 0.15),
+              20px 0px rgba(0,0,0,0.2),
+              30px 0px rgba(0,0,0,0.25),
+              40px 0px rgba(0,0,0,0.3),
+              50px 0px rgba(0,0,0,0.35),
+              60px 0px rgba(0,0,0,0.4),
+              70px 0px rgba(0,0,0,0.45),
+              80px 0px rgba(0,0,0,0.5),
+              90px 0px rgba(0,0,0,0.55),
+              100px 0px rgba(0,0,0,0.6),
+              110px 0px rgba(0,0,0,0.65),
+              120px 0px rgba(0,0,0,0.7),
+              130px 0px rgba(0,0,0,0.75),
+              140px 0px rgba(0,0,0,0.8);
+  transform: rotate(56deg);
+}

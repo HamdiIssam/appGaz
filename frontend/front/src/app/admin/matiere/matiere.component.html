@@ -1,0 +1,52 @@
+
+<form  [formGroup]="matForm">
+<div class="mb-3">
+    <label for="disabledTextInput" class="form-label">Name</label>
+    <input type="text" id="disabledTextInput" class="form-control" placeholder="Put your Name"formControlName="name" >
+  </div>
+
+
+
+
+<div >
+    <table class="table">
+        <thead>
+          <tr>
+          
+            <th scope="col">indice</th>
+         
+            <th scope="col">name</th>
+            <th scope="col">action</th>
+          
+        
+          </tr>
+          <tr *ngFor="let i of matiere ; let l=index">
+    
+            <td>{{l}}</td>
+    
+            <td>{{i.name}}</td>
+        
+           
+            <td>
+             
+              <a (click)="deletmat(i._id)"><i class="bi bi-pencil-square" style="color: blue; font-size: 25px;"></i></a>
+       <a ><i class="bi bi-trash-fill" style="font-size: 25px; color: red;"></i></a>
+            </td>
+            <td>
+           
+        
+            
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+         <tr>
+            <td></td> 
+         </tr>
+       
+        </tbody>
+      </table>
+     
+    </div> 
+</form>
+    <button type="submit" class="btn btn-primary" (click)="addmat()"  >Ajouter matiere</button>

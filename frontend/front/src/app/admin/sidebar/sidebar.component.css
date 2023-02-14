@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+.body {
+    font-family: arial tahoma;
+    background-color: #ccc;
+    text-transform: capitalize;
+    width: 1200px;
+}
+.page {
+    font-family: sans-serif;
+    min-height: 100vh;
+    display: flex;
+}
+.page .sidebar {
+    width: 280px;
+    background-color: rgb(68, 189, 241);
+    color: #fff;
+    padding: 20px;
+}
+.page .sidebar h2 {
+    text-align: center; 
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+.page .sidebar .links{
+ list-style-type: none;   
+}
+.page .sidebar li{
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+.page .sidebar li a { 
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+.page .sidebar li.active {
+    background-color:  rgba(121, 119, 117, 0.993); 
+}
+.sidebar li:not(.active):hover {
+    background-color: rgba(190, 187, 184, 0.883);
+}
+.content {
+    background-color: #eee;
+}
+
+.content h2 {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.content .container {
+    display: flex;
+    padding: 10px;
+}
+.content .container .all {
+    margin-right: 20px;
+    flex-grow: 1;
+    background-color: #fff;
+    position: relative;
+}
+.content .container .all:before {
+ content: "";
+  position: absolute;
+  background-color: #94d05a;
+  width:25%;
+  height: 3px;
+  left: 0px;
+  top: -4px;
+}
+.content .container .all .box {
+    border-bottom: 2px solid #eee;
+    position: relative;
+}
+.content h4 {
+   padding: 15px;
+}
+.container .all .box .number {
+    background-color: #94d05a;
+    color: #fff;
+    width: 40px;
+    padding: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.container .all .img {
+    margin: 10px;
+    position: relative; 
+}
+.container .all .img img {
+    border: 1px solid #d4c6c6;
+    padding: 5px;
+    width: 100%;
+}
+.container .all .img .price {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #e91e63;
+    color: #fff;
+    padding: 7px 7px;
+    font-weight: bold;  
+}
+.container .all p {
+   line-height: 1.6;
+    margin: 10px;
+    text-align: center; 
+}
+.container .all hr {
+    border-top: 1px solid #c7bfbf;
+    margin: 20px;
+    margin-bottom: 20px;
+}
+.container .all .more {
+   text-align: center;
+    margin: -15px auto;
+}
+.container .all .more a{
+    background-color: #94d05a;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+}

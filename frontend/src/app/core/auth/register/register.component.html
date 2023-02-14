@@ -1,0 +1,59 @@
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">créer un compte !</h1>
+                        </div>
+                        <div class="user">
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="addClient.nom" class="form-control form-control-user" id="exampleInputEmail"
+                                    placeholder="Nom d'utlisateur">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="addClient.telephone" class="form-control form-control-addClient" id="exampleInputEmail"
+                                    placeholder="telephone">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" [(ngModel)]="addClient.password" class="form-control form-control-user" id="exampleInputEmail"
+                                    placeholder="Mot de passe">
+                            </div>
+
+                            <div class="form-group">
+                                <!-- <input type="text" [(ngModel)]="addClient.type" class="form-control form-control-user" id="exampleInputEmail"
+                                placeholder="type"  > -->
+                                <select class="form-select" aria-label="Default select example" [(ngModel)]="addClient.type"  placeholder="type"  > ->
+                                    <option value="client">Client</option>
+                                    <option value="Particulier">Particulier</option>
+                                  
+                                  </select>
+                                
+                            </div>
+                            <a (click)=" createClientController()" class="btn btn-primary btn-user btn-block">
+                                Créer le Compte
+                            </a>
+                            <hr>
+                            <a  class="btn btn-google btn-user btn-block">
+                                
+                            </a>
+                            <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                
+                            </a>
+                        </div>
+                        
+                        <div class="text-center">
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

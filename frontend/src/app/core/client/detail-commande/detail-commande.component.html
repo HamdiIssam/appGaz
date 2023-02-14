@@ -1,0 +1,39 @@
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <li class="list-group-item"> date_achat:{{commande.date_achat|date:'shortDate'}}</li>
+          <li class="list-group-item">date_livraison:{{commande.date_livraison|date:'shortDate'}}</li>
+          <li class="list-group-item"> adresse:{{commande.adresse}}</li>
+          <li class="list-group-item">validation:{{commande.validation}}</li>
+          <li class="list-group-item">type_payement:{{commande.type_payement}}</li>
+          <li class="list-group-item">total:{{commande.total}}</li>
+
+        </tr>
+      </thead>
+      
+    </table>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Ref</th>
+          <th scope="col">Nom Produit </th>
+          <th scope="col">prix</th>
+          <th scope="col">quantite</th>
+     
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ligne of lignecmd let index=index">
+          <td> {{index+1}}</td>
+          <td> {{ligne.nom_produit}}</td>
+          <td> {{ligne.prix}}</td>
+          <td> {{ligne.quantite}}</td>
+          
+        
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,68 @@
+<!-- <div >
+    <label  >Type</label>
+    <input type="text"  [(ngModel)]="addporduit.type"  >
+ 
+  </div>
+<div >
+    <label  >prixUnit</label>
+    <input type="text"  [(ngModel)]="addporduit.prixUnit"  >
+ 
+  </div>
+ 
+  <div >
+ 
+ 
+  <button type="button" class="btn btn-primary" (click)="createProduitConrtoller()">Submit</button> -->
+
+  <div class="row">
+    <div class="col">
+      <div class="container">
+        <div class="container">
+          <div class="card" style="width: 30%  ; height: 10%; margin-left: 30%; ">
+            <h5 class="card-title" style="margin-left: 2%; text-align: center;">Ajout Produit :</h5>
+            <div class="card-body" style="width: 90%;margin-left: 5%; margin-top: 2%;">
+              <div class="row">
+                <form #f = "ngForm">
+                <div>
+                  <label>Type:</label>
+                  <br>
+                  <input type="text"  [(ngModel)]="addporduit.type" name="Type"  >
+                </div>
+                <div>
+                  <label>prixUnit :</label>
+                  <br>
+                  <input type="number"  [(ngModel)]="addporduit.prixUnit" name="prixUnit"  >
+  
+                </div>
+                <div>
+                  <label>Unité :</label>
+                  <br>
+                  <input type="text"  [(ngModel)]="addporduit.unite" name="Unité" >
+  
+                </div>
+                <div>
+                  <label>photo :</label>
+                  <br>
+                  <input type="file"  (change)="onFileChange($event)" >
+  
+                </div>
+              </form>
+              </div>
+              <button type="button" class="btn btn-primary" (click)="createProduitConrtoller()">Submit</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <form #f = "ngForm">
+    <input type="text" class="input-msg-send form-control rounded-pill" [(ngModel)]="name" placeholder="Type Title">
+    <div class="form-group">
+    </div>
+      <div class="change-photo-btn" style="margin-left: 2cm;">
+        <span><i class="fa fa-upload"></i> Upload File</span><br> 
+        <input type="file" (change)="onFileChange($event)" name="doc_url"  class="upload">
+    </div>
+      </form> -->
+  

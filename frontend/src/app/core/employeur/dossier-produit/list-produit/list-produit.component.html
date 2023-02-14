@@ -1,0 +1,62 @@
+
+<!-- <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ref</th>
+        <th scope="col">type</th>
+        <th scope="col">prixUnit</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produits of listProduit let index=index">
+        <td> {{index+1}}</td>
+        <td> {{produits.type}}</td>
+        <td> {{produits.prixUnit}}</td>
+        <td><button class="btn btn-danger" (click)="deleteProduit(produits.id)">Delete</button></td>  
+         <td>
+          <button class="btn btn-success" [routerLink]="['/employeur/updateProduit/',(produits.id)]">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<!-- ///////////////////////////////////////////// -->
+
+
+<div class=" container d-flex justify-content-center">
+  <div class="col-lg-12 grid-margin ">
+    <button class="btn btn-primary" routerLink="/employeur/addProduit">add</button>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Liste des Produits :</h4>
+<table class="table">
+  <thead >
+    <tr>
+      <th scope="col">Ref</th>
+      <th scope="col">type</th>
+      <th scope="col">prixUnit</th>
+    </tr>
+
+  </thead>
+  <tbody>
+  <tr *ngFor="let produits of listProduit let index=index">
+        <td> {{index+1}}</td>
+        <td> {{produits.type}}</td>
+        <td> {{produits.prixUnit}} {{produits.unite}}</td>
+        <i (click)="deleteProduit(produits.id)" > Delete
+          <img style="width:2em; height: 2em; "   src="assets/image/delete.png ">
+        </i>
+         <td>
+          <button class="btn btn-success" [routerLink]="['/employeur/updateProduit/',(produits.id)]">Update</button>
+        </td>
+      </tr>
+      </tbody>
+
+</table>
+
+</div>
+</div>
+</div>
+</div>

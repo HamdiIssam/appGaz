@@ -1,0 +1,14 @@
+<div >
+    <label  >validation</label>
+    <input type="checkbox"   [(ngModel)]="commande.validation"  >
+ 
+  </div>
+<div >
+  <select class="form-select" aria-label="Default select example" [(ngModel)]="commande.livreurId">
+    <option  *ngFor="let livreur of listLivreur " value={{livreur.id}} >{{livreur.nom}}</option>
+
+  </select>
+</div>
+  <div>
+    <button type="button" class="btn btn-primary" (click)=" validationCommandeAndAddLivreurController()">Submit</button>
+    </div>

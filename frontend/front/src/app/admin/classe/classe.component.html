@@ -1,0 +1,18 @@
+<label style="color:green;"><strong>Entre classe</strong> </label>
+  <input type="text"  placeholder="classe" [(ngModel)]="text1">
+  <button (click)="ajouterClasse()">ajouter </button>
+  <br><br> <br><br>
+
+  <table class="table">
+    <thead>
+    <tr><th scope="col">nom du classe</th>
+    <th scope="col">action</th></tr>
+  </thead>
+  <tr *ngFor="let o of br ; let l=index">
+  <td>{{o.name}}</td>
+
+  <td>  <a><i class="bi bi-pencil-square" style="color: blue; font-size: 25px;margin-right: 20px;"></i></a>
+    <a (click)="deleteClasse(o._id)"><i class="bi bi-trash-fill" style="font-size: 25px; color: red;margin-right: 20px;"></i></a></td>
+</tr>
+  
+</table>

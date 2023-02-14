@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+<table>
+    <tr>
+      <td>nom prof:</td>
+      <td>{{prof.fullname!}}</td>
+    </tr>
+    <tr>
+      <td>matiere:</td>
+  
+      <td>{{prof.matiere?.name}}</td>
+      
+    </tr>
+  </table>
+  <form [formGroup]="formulaire" (ngSubmit)="getEleveClasse()">
+  
+    <select formControlName="_id">
+      <option value="" disabled>choisir classe</option>
+  
+      <option *ngFor="let c of classes" value="{{c._id}}">{{c.name}}</option>
+    </select>
+    <button class="btn btn-primary" (click)="getEleveClasse();getClassByEleve()">afficher</button>
+  </form>
+<table class="table">
+    <thead>
+      <input type="file" name="photo" (change)="handleFileInput($event)"/>
+      <button (click)="submitDoc()">charger une document</button>
+     </thead>
+    <tbody>
+      <tr>
+        <th scope="col">nom de fichier</th>
+        <th scope="col"> document</th>
+       
+        
+        <th scope="col">action</th>
+       
+  
+      </tr>
+  
+      
+      <tr *ngFor="let u of homeworks">
+        
+        
+        <td>{{u.homework}}</td>
+       
+  <td><img src='http://localhost:3000/{{u.homework}}' style="width: 110px;height: 110px;"> </td>
+  <td><a href='http://localhost:3000/{{u.homework}}'> détaille</a> </td>
+    
+       
+      </tr>
+  
+       
+      
+    </tbody>
+    
+    <caption>liste_devoirs</caption>
+  </table>
+ 
+  <!-- <ng-template class="modal fade" let-modal data-toggle="modal" role="showModal" #showModal>
+
+
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <h5 class="modal-title text-white">Supprimer professeur</h5>
+      </div>
+      <div class="modal-body">
+  
+       <img src="http://localhost:3000/">
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modal.dismiss()">Close</button>
+  
+      </div>
+    </div>
+  </ng-template> -->

@@ -1,0 +1,98 @@
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">créer un compte !</h1>
+                        </div>
+                        <div class="user">
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="addSociete.email" class="form-control form-control-user" id="exampleInputEmail"
+                                    placeholder="email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" [(ngModel)]="addSociete.password" class="form-control form-control-user" id="exampleInputEmail"
+                                    placeholder="Mot de passe">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="addSociete.telephone" class="form-control form-control-addSociete" id="exampleInputEmail"
+                                    placeholder="telephone">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="addSociete.fax" class="form-control form-control-user" id="exampleInputEmail"
+                                placeholder="fax"  >
+                                
+                            </div>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="addSociete.logo" class="form-control form-control-user" id="exampleInputEmail"
+                                placeholder="logo"  >
+                                
+                            </div>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="addSociete.adresse" class="form-control form-control-user" id="exampleInputEmail"
+                                placeholder="adresse"  >
+                                
+                            </div>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="addSociete.nom_employeur" class="form-control form-control-user" id="exampleInputEmail"
+                                placeholder="nom_employeur"  >
+                                
+                            </div>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="addSociete.prenom_employeur" class="form-control form-control-user" id="exampleInputEmail"
+                                placeholder="prenom_employeur"  >
+                                
+                            </div>
+                            <div class="form-group">
+                                <input type="time" [(ngModel)]="addSociete.temps_ouverture" class="form-control form-control-user" id="exampleInputEmail"
+                                placeholder="temps_ouverture"  >
+                                
+                            </div>
+                            <div class="form-group">
+                                <input type="time" [(ngModel)]="addSociete.temps_fermeture" class="form-control form-control-user" id="exampleInputEmail"
+                                placeholder="temps_fermeture"  >
+                                
+                            </div>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="addSociete.nom_societe" class="form-control form-control-user" id="exampleInputEmail"
+                                placeholder="nom_societe"  >
+                                
+                            </div>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="addSociete.jour_travail" class="form-control form-control-user" id="exampleInputEmail"
+                                placeholder="jour_travail"  >
+                                
+                            </div>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="addSociete.matricule_fiscale" class="form-control form-control-user" id="exampleInputEmail"
+                                placeholder="matricule_fiscalepe"  >
+                                
+                            </div>
+                            <a (click)=" createSocieteController()" class="btn btn-primary btn-user btn-block">
+                                Créer le Compte
+                            </a>
+                            <hr>
+                            <a  class="btn btn-google btn-user btn-block">
+                                
+                            </a>
+                            <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                
+                            </a>
+                        </div>
+                        
+                        <div class="text-center">
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

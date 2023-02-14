@@ -1,0 +1,138 @@
+<br>
+<br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="container text-center">
+            <h1>liste Produit </h1>
+            </div>
+            
+            <div class="shell">
+              <div class="container">
+                <div class="row" >
+                  <div class="col p-1" *ngFor="let produit of listProduit ">
+                    <div
+                    class="card"
+                    style="width: 13rem"
+                    
+                  >
+                    <img
+                      class="card-img-top"
+                      src="{{produit.photo}}"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title" style="text-align: center;">{{ produit.type }}</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li
+                        
+                        class="list-group-item"
+                      >
+                        {{ produit.prixUnit }} {{ produit.unite }}
+                    </li>
+                    </ul>
+                    <div class="card-body">
+                      <a (click)="ajout3(produit)" class="card-link">aj</a>
+                    </div>
+                  </div>
+                  </div>
+                 
+                  </div>
+                </div>
+              </div>
+        </div>
+
+
+
+
+
+
+        
+        <!-- 2eme parti -->
+        <div class="col-sm">
+          <div id="register">
+            <div id="ticket">
+              <h3>Thank You!</h3>
+              <table>
+                <tbody id="entries">
+                  <tr>
+                    <th scope="col">Ref</th>
+                    <th scope="col">nom Produit</th>
+                    <th scope="col">Quantité</th>
+                    <th scope="col">Prix</th>
+                    <th scope="col"></th>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr  *ngFor="let lcmde of list let index=index ">
+                    <th>{{index+1}}</th>
+                    <th>{{lcmde.nom_produit}}</th>
+                    <td>{{lcmde.quantite}}</td>
+                    <td>{{lcmde.prix}} </td>
+          
+                    <i (click)="removeLigneCommande(lcmde.produitId,lcmde.nom_produit,lcmde.quantite,lcmde.prix)" >
+                      <img style="width:2em; height: 2em; "   src="assets/image/delete.png ">
+                    </i> 
+            
+                  </tr>
+                  <tr>
+                    <th>Total: {{x}}</th>
+                    <!-- <th id="total"></th> -->
+                  </tr>
+                </tfoot>
+              </table>
+              <!-- <div><button type="button" class="btn btn-primary" style=" margin-left: 80%;" (click)="createController()">Save</button></div> -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="container offset-md-2">
+      <h1>liste Produit</h1>
+    </div>
+    <div class="col-sm" *ngFor="let produit of listProduit">
+      <div
+        class="card"
+        style="width: 13rem"
+        
+      >
+        <img
+          class="card-img-top"
+          src="https://cdn.primagaz.fr/-/media/sites/france/produits/fiches-produits-bouteilles/bouteille-gaz-primagaz-propane-carburation.jpg"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">{{ produit.type }}</h5>
+          <p class="card-text">{{salarie.address}}   {{salarie.phone}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li
+            [ngStyle]="{ 'background-color': 'yellow' }"
+            class="list-group-item"
+          >
+            {{ produit.prixUnit }} {{ produit.unite }}
+        </li>
+        </ul>
+        <div class="card-body">
+          <a (click)="ajout3(produit)" class="card-link">aj</a>
+        </div>
+      </div> -->

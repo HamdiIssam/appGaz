@@ -1,0 +1,222 @@
+
+
+
+<div class="modal"  id="supressionModal"  #supressionModal tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+        <h5 class="modal-title">welcome To </h5>
+       
+    
+      <div class="modal-body">
+        <p>Are you sure to delete thisemploi</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="deletemp()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+<form [formGroup]="emploiForm" (ngSubmit)="updateemp()">
+<div class="modal" id="modificationModal" tabindex="-1" #modificationModal>
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+        <h5 class="modal-title">Emploi</h5>
+      
+     
+      <div class="modal-body">
+        
+        <br><br>
+        <h4>Classe</h4>
+          <select class="form-select" formControlName="classe" >
+            <option value="" disabled>choisir classe</option>
+          
+            <option *ngFor="let c of classe" value="{{c._id}}">{{c.name}}</option>
+          </select>
+          <br><br>
+          <h4>Matiere</h4>
+          <select class="form-select" formControlName="matiere">
+            <option value="" disabled>choisir Matiere</option>
+          
+            <option *ngFor="let m of matiere" value="{{m._id}}">{{m.name}}</option>
+          
+          </select>
+          <br><br>
+          <h4>Salle</h4>
+          <select class="form-select" formControlName="salle">
+            <option value="" disabled>choisir sallle</option>
+            <option  value="salle1">salle1</option>
+            <option  value="salle2">salle2</option>
+            <option  value="salle3">salle3</option>
+            <option  value="salle4">salle4</option>
+            <option  value="salle5">salle5</option>
+            <option  value="salle6">salle6</option>
+            <option  value="stade">stade</option>
+          </select>
+          <br><br>
+          <h4>Jour</h4>
+          <select class="form-select" formControlName="jour">
+            <option value="" disabled>choisir jour</option>
+            <option  value="Lundi">Lundi</option>
+            <option  value="Mardi">Mardi</option>
+            <option  value="Mercredi">Mercredi</option>
+            <option  value="Jeudi">Jeudi</option>
+            <option  value="Vendredi">Vendredi</option>
+            <option  value="Samedi">Samedi</option>
+          
+          </select>
+          <br><br>
+          <h4>Horaire</h4>
+          <select class="form-select" formControlName="seance">
+            <option value="" disabled>choisir jour</option>
+            <option  value="8h-9h">8h-9h</option>
+            <option  value="9h-10h">9h-10h</option>
+            <option  value="10h-11h">10h-11h</option>
+            <option  value="11h-12h">11h-12h</option>
+            <option  value="14h-15h">14h-15h</option>
+            <option  value="15h-16h">15h-16h</option>
+          
+          </select>
+          <br><br>
+          <h4>Proffesseur</h4>
+          <select class="form-select " formControlName="professeur">
+            <option value="" disabled>choisir Professeur</option>
+          
+            <option *ngFor="let p of professeur" value="{{p._id}}">{{p.fullname}}</option>
+          </select>
+         
+          
+       
+         
+       
+        <button type="submit" class="btn btn-primary">Update</button>
+       
+     
+      </div>
+    
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+       
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+<h2>Emploi du Temps</h2>
+
+  <br><br>
+  <form [formGroup]="emploiForm" (ngSubmit)="ajouterEmploi()">
+  <h4>Classe</h4>
+  
+<select class="form-select" formControlName="classe" >
+  <option value="" disabled>choisir classe</option>
+
+  <option *ngFor="let c of classe" value="{{c._id}}">{{c.name}}</option>
+</select>
+<br><br>
+<h4>Matiere</h4>
+<select class="form-select" formControlName="matiere">
+  <option value="" disabled>choisir Matiere</option>
+
+  <option *ngFor="let m of matiere" value="{{m._id}}">{{m.name}}</option>
+
+</select>
+<br><br>
+<h4>Salle</h4>
+<select class="form-select" formControlName="salle">
+  <option value="" disabled>choisir sallle</option>
+  <option  value="salle1">salle1</option>
+  <option  value="salle2">salle2</option>
+  <option  value="salle3">salle3</option>
+  <option  value="salle4">salle4</option>
+  <option  value="salle5">salle5</option>
+  <option  value="salle6">salle6</option>
+  <option  value="stade">stade</option>
+</select>
+<br><br>
+<h4>Jour</h4>
+<select class="form-select" formControlName="jour">
+  <option value="" disabled>choisir jour</option>
+  <option  value="Lundi">Lundi</option>
+  <option  value="Mardi">Mardi</option>
+  <option  value="Mercredi">Mercredi</option>
+  <option  value="Jeudi">Jeudi</option>
+  <option  value="vendredi">vendredi</option>
+  <option  value="Samedi">Samedi</option>
+
+</select>
+<br><br>
+<h4>Horaire</h4>
+<select class="form-select" formControlName="seance">
+  <option value="" disabled>choisir jour</option>
+  <option  value="8h-9h">8h-9h</option>
+  <option  value="9h-10h">9h-10h</option>
+  <option  value="10h-11h">10h-11h</option>
+  <option  value="11h-12h">11h-12h</option>
+  <option  value="14h-15h">14h-15h</option>
+  <option  value="15h-16h">15h-16h</option>
+
+</select>
+<br><br>
+<h4>Proffesseur</h4>
+<select class="form-select " formControlName="professeur">
+  <option value="" disabled>choisir Professeur</option>
+
+  <option *ngFor="let p of professeur" value="{{p._id}}">{{p.fullname}}</option>
+</select>
+<button type="submit" class="btn btn-primary" (click)="ajouterEmploi()"  >
+  Ajouter
+   </button>
+
+
+
+</form>
+
+<br> <br>
+
+
+<div class="text-right">
+
+ 
+<table border="2" class="table">
+    
+
+    
+        <tr>  
+      
+    <th scope="col">Horaire</th>
+  
+    <th scope="col-3"> Jour </th>
+  
+    <th scope="col">Classe</th>
+    <th scope="col">Proffesseur</th>
+    <th scope="col">Matiere</th>
+    <th scope="col">Salle</th>
+
+  </tr>
+  
+    <tbody>
+    
+      <tr *ngFor="let u of emp ">
+        <td>{{u.seance}}</td>
+        <td>{{u.jour}}</td>
+        <td>{{u.classe.name}}</td>
+        <td>{{u.professeur.fullname}}</td>
+        <td>{{u.matiere?.name}}</td>
+        <td>{{u.salle}}</td>
+        <button type="submit" class="btn btn-primary"   (click)="update(u)">
+         mettre A jour
+          </button>
+          <button type="submit" class="btn btn-primary"   (click)="OpendeletModal(u._id)">
+          Delete
+             </button>
+      </tr>
+    
+    </tbody>
+  
+  </table>
+  <br><br>
+</div>
