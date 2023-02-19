@@ -11,7 +11,7 @@ import { ProduitService } from '../../services/produit.service';
   styleUrls: ['./commande.component.scss']
 })
 export class CommandeComponent {
-  @Input()
+  @Input() 
     ////////////fonction get
 
     listProduit: Produit[] = [];
@@ -39,9 +39,7 @@ export class CommandeComponent {
     id!: number;
     qts = 1;
   
-    constructor(
-    private produitSer: ProduitService,
-    ) { }
+    constructor(private produitSer: ProduitService, ) { }
 
 
 
@@ -54,7 +52,7 @@ export class CommandeComponent {
     this.produitSer.getAllProduit().subscribe((data) => {
       
       this.listProduit = data;
-      console.log('dedfefe',  this.listProduit );
+      // console.log('dedfefe',  this.listProduit );
       
 
     });

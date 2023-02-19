@@ -33,16 +33,7 @@
                     </select>
                   
               </div>
-                <!-- <label>type_payement</label>
-                <input type="text" [(ngModel)]="addCommande.type_payement"> -->
                 <div>
-                  <!-- <div>
-                    <label>total</label>
-                    <input type="text" [(ngModel)]="addCommande.total">
-                  </div> -->
-                  <!-- <div>
-                  <td  style="color: blue;">Prix Total : {{x}}</td>
-                </div> -->
                     <div class="col-md-12">
                       <div class="form-group">
                         <label> Produit :</label>
@@ -67,93 +58,7 @@
           </div>
         </div>
 
-        <!-- 2éme partie -->
-        
-        <!-- <div class="table-responsive">
-          <caption>Ticket N°</caption>
+       
 
-
-            <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Ref</th>
-                <th scope="col">ProduitId</th>
-                <th scope="col">nom Produit</th>
-                <th scope="col">Quantité</th>
-                <th scope="col">Prix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let lcmde of list let index=index ">
-                <th>{{index+1}}</th>
-                <td >{{lcmde.produitId}}</td>
-                <th>{{lcmde.nom_produit}}</th>
-                <td>{{lcmde.quantite}}</td>
-                <td>{{lcmde.prix}}</td>
-                <div>
-                <button type="button" class="btn btn-danger" (click)="removeLigneCommande(lcmde.produitId,lcmde.nom_produit,lcmde.quantite,lcmde.prix)">remove</button>
-                </div>
-              </tr>
-            </tbody>
-          </table> 
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- /////////////////// Ticket   ///////////////////////// -->
-
-
-
-<div id="register">
-  <div id="ticket">
-    <h3>Thank You!</h3>
-    <table>
-      <tbody id="entries">
-        <tr>
-          <th scope="col">Ref</th>
-          <th scope="col">nom Produit</th>
-          <th scope="col">Quantité</th>
-          <th scope="col">Prix</th>
-          <th scope="col"></th>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr  *ngFor="let lcmde of list let index=index ">
-          <th>{{index+1}}</th>
-          <th>{{lcmde.nom_produit}}</th>
-          <td>{{lcmde.quantite}}</td>
-          <td>{{lcmde.prix}}</td>
-
-          <i (click)="removeLigneCommande(lcmde.produitId,lcmde.nom_produit,lcmde.quantite,lcmde.prix)" >
-            <img style="width:2em; height: 2em; "   src="assets/image/delete.png ">
-          </i> 
-  
-        </tr>
-        <tr>
-          <th>Total: {{x}}</th>
-          <!-- <th id="total"></th> -->
-        </tr>
-      </tfoot>
-    </table>
-    <div><button type="button" class="btn btn-primary" style=" margin-left: 80%;" (click)="createController()">Save</button></div>
-    
-  </div>
-</div>
-
-
-
-<!-- ajout avec click -->
-<div class="wrapper">
-  <div class="cards"  *ngFor="let produit of listProduit ">
-    <div class=" card [ is-collapsed ] "  >
-      <div class="card__inner [ js-expander ]" (click)="ajout3(produit)" >
-        {{produit.type}}
-    </div>
-  </div>
-</div>
-
-
+<app-commande></app-commande>
 

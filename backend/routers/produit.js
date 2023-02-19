@@ -12,9 +12,9 @@ const multer = require("multer");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     console.log("req.file");
-    cb(null, 'C:/Users/Issam Hamdi/Desktop/appGaz/frontend/src/assets/imageProduit/');
+    // cb(null, 'C:/Users/Issam Hamdi/Desktop/appGaz/frontend/src/assets/imageProduit/');
+    cb(null, 'C:/Users/Toshiba10Pro/Desktop/appGaz/frontend/src/assets/imageProduit/');
   },
-
   filename: function (req, file, cb) {
     cb(null, file.originalname);
   },

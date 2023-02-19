@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { UpdateClientComponent } from './update-client/update-client.component';
 import { DetailCommandeComponent } from './detail-commande/detail-commande.component';
 import { CommandeComponent } from './commande/commande.component';
+import { ClientComponent } from './client.component';
+
 
 
 
@@ -18,9 +20,10 @@ import { CommandeComponent } from './commande/commande.component';
     ListCommandeComponent,
     AddCommandeComponent,
     UpdateClientComponent,
-
+ClientComponent,
     DetailCommandeComponent,
       CommandeComponent,
+   
   
   
   ],
