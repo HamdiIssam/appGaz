@@ -1,5 +1,7 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 import { Commande } from '../../models/commande';
 import { Lignecmd } from '../../models/lignecmd';
 import { Produit } from '../../models/produit';
@@ -15,14 +17,18 @@ import { ProduitService } from '../../services/produit.service';
 export class AddCommandeComponent {
   ////////////fonction get
 
-  addCommande: Commande = { id: 0 };
+  addCommande: Commande = { id: 0, date_achat: new Date() };
   addLigneCmd: Lignecmd = {
-    prix: 0, nom_produit: '', quantite: 0, commandeId: 0, produitId: 0,
+    prix: 0,
+    nom_produit: '',
+    quantite: 0,
+    commandeId: 0,
+    produitId: 0,
   };
   SocieteId!: number;
   clientId!: number;
   listProduit: Produit[] = [];
-  Produits: Produit = { id: 0, prixUnit: 0, type: '' ,unite:'' , photo:''};
+  Produits: Produit = { id: 0, prixUnit: 0, type: '', unite: '', photo: '' };
 
   ///////// fonction ajout()
 
@@ -45,13 +51,17 @@ export class AddCommandeComponent {
   //////////// fonction ajout3
   id!: number;
   qts = 1;
+  ////////////////// test date
+  new_date = new Date();
+  message1=''
+  message2=''
 
   constructor(
     private ligneCmdSer: LignecmdService,
     private commandeSer: CommandeService,
     private produitSer: ProduitService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.SocieteId = Number(localStorage.getItem('societeId'));
@@ -62,7 +72,6 @@ export class AddCommandeComponent {
   getAllListProduit() {
     this.produitSer.getAllProduit().subscribe((data) => {
       this.listProduit = data;
-
     });
   }
 
@@ -75,13 +84,13 @@ export class AddCommandeComponent {
 
   ajout() {
     this.getProduitByIdController(this.lignecmds.produitId);
-    console.log('produitId 1 ', this.lignecmds.produitId);
+    // console.log('produitId 1 ', this.lignecmds.produitId);
     // console.log('list1',this.list);
   }
 
   ajout2() {
     this.ajout();
-    let LC = this.list.find(nn => nn.produitId == this.Produits.id)
+    let LC = this.list.find((nn) => nn.produitId == this.Produits.id);
     if (LC === undefined) {
       this.list.push({
         produitId: this.Produits.id,
@@ -89,10 +98,8 @@ export class AddCommandeComponent {
         prix: this.Produits.prixUnit,
         quantite: this.lignecmds.quantite,
       });
-
-    }
-    else {
-      LC.quantite += this.lignecmds.quantite
+    } else {
+      LC.quantite += this.lignecmds.quantite;
     }
     this.calculPrixTotal(this.lignecmds.quantite, this.Produits.prixUnit);
 
@@ -121,50 +128,69 @@ export class AddCommandeComponent {
   ////////// ajout un produit avec click
 
   ajout3(idProduit: Produit) {
-
-    this.getProduitByIdController(idProduit.id)
+    this.getProduitByIdController(idProduit.id);
 
     // console.log('getProduitByIdController',idProduit);
 
-    let L = this.list.find(nn => nn.produitId == idProduit.id)
+    let L = this.list.find((nn) => nn.produitId == idProduit.id);
 
     if (L === undefined) {
       this.list.push({
         produitId: idProduit.id,
         nom_produit: idProduit.type,
         prix: idProduit.prixUnit,
-        quantite: this.qts
+        quantite: this.qts,
       });
-
-    }
-    else {
-      L.quantite++
+    } else {
+      L.quantite++;
     }
     this.calculPrixTotal(this.qts, idProduit.prixUnit);
   }
-
-
-
 
   createController() {
     this.addCommande.societeId = this.SocieteId;
     this.addCommande.clientId = this.clientId;
     this.addCommande.total = this.x;
-    const bb = this.commandeSer
-      .createCommande(this.addCommande)
-      .subscribe((data) => {
-        if (bb) {
-          this.list.forEach((element) => {
-            this.addLigneCmd.commandeId = data.id;
-            this.addLigneCmd.produitId = element.produitId;
-            this.addLigneCmd.nom_produit = element.nom_produit;
-            this.addLigneCmd.prix = element.prix;
-            this.addLigneCmd.quantite = element.quantite;
 
-            this.ligneCmdSer.createLigneCmdService(this.addLigneCmd).subscribe((data) => { });
-          });
-        }
-        this.router.navigate(['/client/list-cmdClient/' + data.clientId]);
-      });
+const date_ach=moment(this.addCommande.date_achat).startOf('day')
+const date_liv =moment(this.addCommande.date_livraison).startOf('day')
+const new_date=moment().startOf('day')
+
+    // console.log(date_ach >= new_date);
+
+    if (date_ach >= new_date) {
+
+      if (date_liv>=date_ach) {
+        const bb = this.commandeSer.createCommande(this.addCommande).subscribe((data) => {
+          if (bb) {
+            this.list.forEach((element) => {
+              this.addLigneCmd.commandeId = data.id;
+              this.addLigneCmd.produitId = element.produitId;
+              this.addLigneCmd.nom_produit = element.nom_produit;
+              this.addLigneCmd.prix = element.prix;
+              this.addLigneCmd.quantite = element.quantite;
+  
+              this.ligneCmdSer.createLigneCmdService(this.addLigneCmd).subscribe((data) => {
+                console.log(data);
+  
+               });
+            });
+          }
+  
+          this.router.navigate(['/client/list-cmdClient/' + data.clientId]);
+        });
+      }
+      else{
+        this.message1='verify date_livraison'
+      }
+
+     
+    }
+    else{
+      this.message2=' verify date_achat'
+    }
+
+
+   
   }
 }

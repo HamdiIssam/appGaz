@@ -26,7 +26,7 @@ export class ListCmdLivreurComponent {
 
   ngOnInit(): void {
     this.client={id:0}
-    this.commande = { id: 0 }
+    this.commande = { id: 0 , date_achat: new Date }
     this.id = (this.activateRouter.snapshot.params['id'])
     this.getAllCommandeByLivreurId(this.id)
     this.getLivreurByIdController(this.id)

@@ -18,7 +18,7 @@ export class DetailCommandeComponent {
   constructor(private commandeSer:CommandeService, private ligneCmdSer:LignecmdService , private activatedRoute:ActivatedRoute){}
 
 ngOnInit():void{
-  this.commande = { id: 0 }
+  this.commande = { id: 0 , date_achat: new Date }
   this.id = (this.activatedRoute.snapshot.params['id'])
   this.getcommandeById(this.id)
   this.getAllLigneCmdByCommandeIdController(this.id)

@@ -21,7 +21,7 @@ export class UpdateCmdeComponent {
   constructor(private livreurSer:LivreurService,private commandeSer: CommandeService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.commande = { id: 0  }
+    this.commande = { id: 0 ,date_achat :new Date }
     this.livreur ={ id:0, nom:''}
     this.id = (this.activatedRoute.snapshot.params['id'])
     this.getcommandeById(this.id)

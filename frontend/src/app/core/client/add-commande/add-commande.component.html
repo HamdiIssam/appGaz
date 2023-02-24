@@ -1,64 +1,132 @@
-
 <div class="row">
   <div class="col">
     <div class="container">
       <div class="container">
-        <div class="card" style="width: 30%  ; height: 10%; margin-left: -5%; ">
-          <h5 class="card-title" style="margin-left: 2%;">Remplir Le Formulaire :</h5>
-          <div class="card-body" style="width: 90%;margin-left: 5%; margin-top: 2%;">
+        <div class="card" style="width: 30%; height: 10%; margin-left: -5%">
+          <button class="btn btn-primary" (click)="createController()">
+            save
+          </button>
+          <h5 class="card-title" style="margin-left: 2%">
+            Remplir Le Formulaire :
+          </h5>
+          <div
+            class="card-body"
+            style="width: 90%; margin-left: 5%; margin-top: 2%"
+          >
             <div class="row">
               <div>
                 <label>date_achat :</label>
-                <br>
-                <input type="date" [(ngModel)]="addCommande.date_achat">
+                <br />
+                <input type="date" [(ngModel)]="addCommande.date_achat" />
+                <div class="text-danger">{{ message2 }}</div>
               </div>
               <div>
                 <label>date_livraison :</label>
-                <br>
-                <input type="date" [(ngModel)]="addCommande.date_livraison">
-
+                <br />
+                <input type="date" [(ngModel)]="addCommande.date_livraison" />
+                <div class="text-danger">{{ message1 }}</div>
               </div>
               <div>
                 <label>adresse :</label>
-                <input type="text" [(ngModel)]="addCommande.adresse">
+                <input type="text" [(ngModel)]="addCommande.adresse" />
               </div>
               <div>
-                
                 <div class="form-group">
                   <label>type_payement :</label>
-                  <select class="form-select" aria-label="Default select example"  type="text" [(ngModel)]="addCommande.type_payement"  placeholder="type"  > ->
-                      <option value="sur plase">Sur Plase</option>
-                      <option value="avec carte">Avec Carte</option>
-                    
-                    </select>
-                  
-              </div>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    type="text"
+                    [(ngModel)]="addCommande.type_payement"
+                    placeholder="type"
+                  >
+                    ->
+                    <option value="sur plase">Sur Plase</option>
+                    <option value="avec carte">Avec Carte</option>
+                  </select>
+                </div>
                 <div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label> Produit :</label>
-                        <select class="form-select" aria-label="Default select example"  [(ngModel)]="lignecmds.produitId"  >
-                          <option  *ngFor="let produit of listProduit " (click)="ajout()" [ngValue]="produit.id">
-                            {{produit.type}} </option>
-                            
-                          </select>
-                      </div>
-                    </div>
+                  <div class="col-md-12">
                     <div class="form-group">
-                      <label>nombre :</label>
-                      <input name="Quantite" type="number" class="form-control" [(ngModel)]='lignecmds.quantite'>
+                      <label> Produit :</label>
+                      <select
+                        class="form-select"
+                        aria-label="Default select example"
+                        [(ngModel)]="lignecmds.produitId"
+                      >
+                        <option
+                          *ngFor="let produit of listProduit"
+                          (click)="ajout()"
+                          [ngValue]="produit.id"
+                        >
+                          {{ produit.type }}
+                        </option>
+                      </select>
                     </div>
+                  </div>
+                  <div class="form-group">
+                    <label>nombre :</label>
+                    <input
+                      name="Quantite"
+                      type="number"
+                      class="form-control"
+                      [(ngModel)]="lignecmds.quantite"
+                    />
+                  </div>
 
-                    <button class="btn btn-primary"  (click)="ajout2()">push</button>
-           
-
+                  <button class="btn btn-primary" (click)="ajout2()">
+                    push
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-       
+        <div id="register">
+          <div id="ticket">
+            <h3>Thank You!</h3>
+            <table>
+              <tbody id="entries">
+                <tr>
+                  <th scope="col">Ref</th>
+                  <th scope="col">nom Produit</th>
+                  <th scope="col">Quantité</th>
+                  <th scope="col">Prix</th>
+                  <th scope="col"></th>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr *ngFor="let lcmde of list; let index = index">
+                  <th>{{ index + 1 }}</th>
+                  <th>{{ lcmde.nom_produit }}</th>
+                  <td>{{ lcmde.quantite }}</td>
+                  <td>{{ lcmde.prix }}</td>
 
-<app-commande></app-commande>
-
+                  <i
+                    (click)="
+                      removeLigneCommande(
+                        lcmde.produitId,
+                        lcmde.nom_produit,
+                        lcmde.quantite,
+                        lcmde.prix
+                      )
+                    "
+                  >
+                    <img
+                      style="width: 2em; height: 2em"
+                      src="assets/image/delete.png "
+                    />
+                  </i>
+                </tr>
+                <tr>
+                  <th>Total: {{ x }} {{ Produits.unite }}</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,7 +21,7 @@ export class ListCommandeComponent {
 
   ngOnInit(): void {
     
-    this.commande={id:0 }
+    this.commande={id:0 ,date_achat : new Date }
     this.id = (this.activateRouter.snapshot.params['id'])
     this.getAllCommandeByclientID(this.id)
     this.getAllLigneCmdByCommandeIdController(this.id)

@@ -22,7 +22,7 @@ id!:number
   constructor(private ligneCmdSer:LignecmdService,private clientSer:ClientService, private activatedRoute:ActivatedRoute, private router:Router ,private commandeSer:CommandeService) { }
   ngOnInit(): void {
     this.client={id:0}
-    this.commande={id:0}
+    this.commande={id:0 , date_achat : new Date}
     this.id=(this.activatedRoute.snapshot.params['id'])
   this.getClientById(this.id)
   this.getAllCommandeByClientId(this.id)

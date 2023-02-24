@@ -19,8 +19,8 @@ constructor(private router: Router, private loginLivreur: LivreurService){}
   loginLivreurController(telephone:number, password: string) {
     this.loginLivreur.loginLivreur(telephone, password).subscribe(data => {
       this.LivreurLogin = data
-      localStorage.setItem('role2', 'livreur'),
-        localStorage.setItem('livreurId', data.id)
+      // localStorage.setItem('role2', 'livreur'),
+      //   localStorage.setItem('livreurId', data.id)
         this.router.navigate(['/livreur/list-cmdLivreur/' + data.id])
 
     })   
